@@ -80,7 +80,7 @@ def inference(context, h_input, h_output, d_input, d_output, stream):
 
 
 def run_trt_model(model_name):
-    model_path = f"/tmp/trt_example/Model/{model_name}.onnx"
+    model_path = f"./Model/{model_name}.onnx"
     img_path = "elephhant2.jpeg"
 
     engine = build_engine(model_path)
