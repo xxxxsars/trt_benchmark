@@ -21,7 +21,7 @@ def save_h5(model_name):
 
 def save_onnx(model_name):
     keras_path = "tmp.h5"
-    onnx_path =   f'/Model/{model_name}.onnx'
+    onnx_path =   f'{model_name}.onnx'
 
     keras_model = load_model(keras_path)
     onnx_model = onnxmltools.convert_keras(keras_model)

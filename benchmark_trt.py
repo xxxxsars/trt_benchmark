@@ -104,13 +104,13 @@ def run_trt_model(model_name):
 
 
 if __name__ == "__main__":
-#todo 檢查路徑onnx 是否正確
+
     run_trt_model("vgg16")
-    # run_trt_model("vgg19")
-    # run_trt_model("resnet50")
-    # run_trt_model("resnet101")
-    # run_trt_model("densenet")
-    # run_trt_model("mobilenet")
+    run_trt_model("vgg19")
+    run_trt_model("resnet50")
+    run_trt_model("resnet101")
+    run_trt_model("densenet")
+    run_trt_model("mobilenet")
 
 
 
