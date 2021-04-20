@@ -10,7 +10,7 @@ import pycuda.driver as cuda
 import pycuda.autoinit
 import time
 from PIL import Image
-import os
+
 
 from tensorflow.keras.preprocessing import image
 
@@ -82,7 +82,7 @@ def inference(context, h_input, h_output, d_input, d_output, stream):
 
 def run_trt_model(model_name):
 
-    model_path =  os.path.join(os.path.dirname(__file__), f"/Model/{model_name}.onnx")
+    model_path =  f"{model_name}.onnx"
     img_path = "elephhant2.jpeg"
 
     engine = build_engine(model_path)
@@ -104,7 +104,7 @@ def run_trt_model(model_name):
 
 
 if __name__ == "__main__":
-
+#todo 檢查路徑onnx 是否正確
     run_trt_model("vgg16")
     # run_trt_model("vgg19")
     # run_trt_model("resnet50")

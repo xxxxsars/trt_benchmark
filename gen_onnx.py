@@ -10,21 +10,18 @@ from tensorflow.keras.models import load_model
 import onnxmltools
 from benchmark import get_model
 import multiprocessing
-import os
+
 
 
 def save_h5(model_name):
-    keras_path = os.path.join(os.path.dirname(__file__), "/Model/tmp.h5")
+    keras_path = "tmp.h5"
     model = get_model(model_name)[0]
     model.save(keras_path)
 
 
 def save_onnx(model_name):
-    keras_path = os.path.join(os.path.dirname(__file__), "/Model/tmp.h5")
-    onnx_path =  os.path.join(os.path.dirname(__file__), f'/Model/{model_name}.onnx')
-
-    if  not os.path.exists( os.path.join(os.path.dirname(__file__), "Model")):
-        os.mkdir("Model")
+    keras_path = "tmp.h5"
+    onnx_path =   f'/Model/{model_name}.onnx'
 
     keras_model = load_model(keras_path)
     onnx_model = onnxmltools.convert_keras(keras_model)
